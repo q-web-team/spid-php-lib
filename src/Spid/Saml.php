@@ -31,6 +31,7 @@ class Saml implements SAMLInterface
 
     public function loadIdpFromFile(string $filename)
     {
+
         if (empty($filename)) {
             return null;
         }
@@ -38,7 +39,11 @@ class Saml implements SAMLInterface
             return $this->idps[$filename];
         }
         $idp = new Idp($this);
-        $this->idps[$filename] = $idp->loadFromXml($filename);
+        if($filename!="cie"){
+            $this->idps[$filename] = $idp->loadFromXml($filename);}
+        else{
+            $this->idps[$filename] = $idp->loadFromXmlCIE($filename);
+        }
         return $idp;
     }
 
@@ -50,7 +55,7 @@ class Saml implements SAMLInterface
             $mapping = array();
             foreach ($files as $filename) {
                 $idp = $this->loadIdpFromFile($filename);
-                
+
                 $mapping[basename($filename, ".xml")] = $idp->metadata['idpEntityId'];
             }
             return $mapping;
@@ -70,7 +75,7 @@ class Saml implements SAMLInterface
             <error>Your SP certificate file is not readable. Please check file permissions.</error>
 XML;
         }
-        
+
         $entityID = htmlspecialchars($this->settings['sp_entityid'], ENT_XML1);
         $id = preg_replace('/[^a-z0-9_-]/', '_', $entityID);
         $cert = Settings::cleanOpenSsl($this->settings['sp_cert_file']);
@@ -80,10 +85,8 @@ XML;
         $attrcsArray = $this->settings['sp_attributeconsumingservice'] ?? array();
 
         $xml = <<<XML
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="$entityID" ID="$id">
-    <md:SPSSODescriptor
-        protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"
-        AuthnRequestsSigned="true" WantAssertionsSigned="true">
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:spid="https://spid.gov.it/saml-extensions" entityID="$entityID" ID="$id">
+    <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="true" WantAssertionsSigned="true">
         <md:KeyDescriptor use="signing">
             <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 <ds:X509Data><ds:X509Certificate>$cert</ds:X509Certificate></ds:X509Data>
@@ -91,6 +94,7 @@ XML;
         </md:KeyDescriptor>
 XML;
         foreach ($sloLocationArray as $slo) {
+
             $location = htmlspecialchars($slo[0], ENT_XML1);
             $binding = $slo[1];
             if (strcasecmp($binding, "POST") === 0 || strcasecmp($binding, "") === 0) {
@@ -111,9 +115,7 @@ XML;
             $location = htmlspecialchars($assertcsArray[$i], ENT_XML1);
             $xml .= <<<XML
 
-        <md:AssertionConsumerService index="$i"
-            isDefault="true"
-            Location="$location" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
+        <md:AssertionConsumerService index="$i" isDefault="true" Location="$location" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
 XML;
         }
         for ($i = 0; $i < count($attrcsArray); $i++) {
@@ -136,12 +138,24 @@ XML;
         if (array_key_exists('sp_org_name', $this->settings)) {
             $orgName = $this->settings['sp_org_name'];
             $orgDisplayName = $this->settings['sp_org_display_name'];
+            $pIVA_SP= $this->settings['sp_vat_number'];
+            $CF_SP= $this->settings['sp_fiscal_code'];
+            $ref= $this->settings['sp_referente_email'];
+            $telefono= $this->settings['sp_referente_telefono'];
             $xml .= <<<XML
 <md:Organization>
     <md:OrganizationName xml:lang="it">$orgName</md:OrganizationName>
     <md:OrganizationDisplayName xml:lang="it">$orgDisplayName</md:OrganizationDisplayName>
     <md:OrganizationURL xml:lang="it">$entityID</md:OrganizationURL>
 </md:Organization>
+<md:ContactPerson contactType="other">
+ <md:Extensions>
+ <spid:VATNumber>$pIVA_SP</spid:VATNumber>
+ <spid:FiscalCode>$CF_SP</spid:FiscalCode>
+ </md:Extensions>
+ <md:EmailAddress>$ref</md:EmailAddress>
+ <md:TelephoneNumber>$telefono</md:TelephoneNumber>
+ </md:ContactPerson>
 XML;
         }
         $xml .= '</md:EntityDescriptor>';
@@ -153,59 +167,59 @@ XML;
         string $idpName,
         int $assertId,
         int $attrId,
-        $level = 1,
+               $level = 1,
         string $redirectTo = null,
-        $shouldRedirect = true
+               $shouldRedirect = true
     ) {
         $args = func_get_args();
         return $this->baseLogin(Settings::BINDING_REDIRECT, ...$args);
     }
 
-    public function loginPost(
-        string $idpName,
-        int $assertId,
-        int $attrId,
-        $level = 1,
-        string $redirectTo = null,
-        $shouldRedirect = true
-    ) {
+    public function loginPost(string $idpName, int $assertId, int $attrId, $level = 1, string $redirectTo = null, $shouldRedirect = true)
+    {
         $args = func_get_args();
         return $this->baseLogin(Settings::BINDING_POST, ...$args);
     }
 
-    private function baseLogin(
-        $binding,
-        $idpName,
-        $assertId,
-        $attrId,
-        $level = 1,
-        $redirectTo = null,
-        $shouldRedirect = true
-    ) {
-        if ($this->isAuthenticated()) {
-            return false;
-        }
-        if (!array_key_exists($assertId, $this->settings['sp_assertionconsumerservice'])) {
-            throw new \Exception("Invalid Assertion Consumer Service ID");
-        }
-        if (isset($this->settings['sp_attributeconsumingservice'])) {
-            if (!isset($this->settings['sp_attributeconsumingservice'][$attrId])) {
-                throw new \Exception("Invalid Attribute Consuming Service ID");
+    private function baseLogin($binding, $idpName, $assertId, $attrId, $level = 1, $redirectTo = null, $shouldRedirect = true) {
+
+
+
+        if($idpName!='cie'){
+            if ($this->isAuthenticated()) {
+                return false;
             }
-        } else {
-            $attrId = null;
+            if (!array_key_exists($assertId, $this->settings['sp_assertionconsumerservice'])) {
+                throw new \Exception("Invalid Assertion Consumer Service ID");
+            }
+            if (isset($this->settings['sp_attributeconsumingservice'])) {
+                if (!isset($this->settings['sp_attributeconsumingservice'][$attrId])) {
+                    throw new \Exception("Invalid Attribute Consuming Service ID");
+                }
+            } else {
+                $attrId = null;
+            }
         }
 
+
         $idp = $this->loadIdpFromFile($idpName);
-        return $idp->authnRequest($assertId, $attrId, $binding, $level, $redirectTo, $shouldRedirect);
+
+        if($idp->idpFileName!='cie')
+        {return $idp->authnRequest($assertId, $attrId, $binding, $level, $redirectTo, $shouldRedirect);}
+        else{return $idp->authnRequestCIE($assertId, $attrId, $binding, $level, $redirectTo, $shouldRedirect);}
+
     }
 
     public function isAuthenticated() : bool
     {
+
         $selectedIdp = $_SESSION['idpName'] ?? $_SESSION['spidSession']['idp'] ?? null;
+
         if (is_null($selectedIdp)) {
             return false;
         }
+
+
         $idp = $this->loadIdpFromFile($selectedIdp);
         $response = new BaseResponse($this);
         if (!empty($idp) && !$response->validate($idp->metadata['idpCertValue'])) {
@@ -251,14 +265,14 @@ XML;
         if ($this->isAuthenticated() === false) {
             return array();
         }
-        return isset($this->session->attributes) && is_array($this->session->attributes) ? $this->session->attributes :
-            array();
+        return isset($this->session->attributes) && is_array($this->session->attributes) ? $this->session->attributes : array();
     }
-    
+
     // returns true if the SP certificates are found where the settings says they are, and they are valid
     // (i.e. the library has been configured correctly
     private function isConfigured() : bool
     {
+
         if (!is_readable($this->settings['sp_key_file'])) {
             return false;
         }
@@ -280,20 +294,17 @@ XML;
     }
 
     // Generates with openssl the SP certificates where the settings says they should be
-    // this function should be used with care because it requires write access to the filesystem,
-    // and invalidates the metadata
+    // this function should be used with care because it requires write access to the filesystem, and invalidates the metadata
     private function configure()
     {
         $keyCert = SignatureUtils::generateKeyCert($this->settings);
         $dir = dirname($this->settings['sp_key_file']);
         if (!is_dir($dir)) {
-            throw new \InvalidArgumentException('The directory you selected for sp_key_file does not exist. ' .
-                'Please create ' . $dir);
+            throw new \InvalidArgumentException('The directory you selected for sp_key_file does not exist. Please create ' . $dir);
         }
         $dir = dirname($this->settings['sp_cert_file']);
         if (!is_dir($dir)) {
-            throw new \InvalidArgumentException('The directory you selected for sp_cert_file does not exist.' .
-                'Please create ' . $dir);
+            throw new \InvalidArgumentException('The directory you selected for sp_cert_file does not exist. Please create ' . $dir);
         }
         file_put_contents($this->settings['sp_key_file'], $keyCert['key']);
         file_put_contents($this->settings['sp_cert_file'], $keyCert['cert']);
