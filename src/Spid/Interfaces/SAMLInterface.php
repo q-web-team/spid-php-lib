@@ -60,8 +60,8 @@ interface SAMLInterface
     public function getIdp(string $filename);
 
     // returns SP metadata as a string
-    public function getSPMetadata() : string;
-    
+    public function getSPMetadata(string $type, array $extraSettings): string;
+
     // performs login with REDIRECT binding
     // $idpFilename: shortname of IdP, same as the name of corresponding IdP metadata file, without .xml extension
     // $assertID: index of assertion consumer service as per the SP metadata
@@ -75,9 +75,9 @@ interface SAMLInterface
         string $idpFilename,
         int $assertID,
         int $attrID,
-        $level = 1,
+               $level = 1,
         string $redirectTo = null,
-        $shouldRedirect = true
+               $shouldRedirect = true
     );
 
     // performs login with POST Binding
@@ -86,9 +86,9 @@ interface SAMLInterface
         string $idpFilename,
         int $assertID,
         int $attrID,
-        $level = 1,
+               $level = 1,
         string $redirectTo = null,
-        $shouldRedirect = true
+               $shouldRedirect = true
     );
 
     // This method takes the necessary steps to update the user login status, and return a boolean representing the

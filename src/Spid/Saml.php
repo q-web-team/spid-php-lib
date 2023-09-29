@@ -68,7 +68,7 @@ class Saml implements SAMLInterface
         return $this->loadIdpFromFile($filename);
     }
 
-    public function getSPMetadata(): string
+    public function getSPMetadata(string $type, array $extraSettings): string
     {
         if (!is_readable($this->settings['sp_cert_file'])) {
             return <<<XML
@@ -85,7 +85,7 @@ XML;
         $attrcsArray = $this->settings['sp_attributeconsumingservice'] ?? array();
 
         $xml = <<<XML
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:spid="https://spid.gov.it/saml-extensions" entityID="$entityID" ID="$id">
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:$type="https://spid.gov.it/saml-extensions" entityID="$entityID" ID="$id">
     <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="true" WantAssertionsSigned="true">
         <md:KeyDescriptor use="signing">
             <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
@@ -134,7 +134,6 @@ XML;
         }
         $xml .= '</md:SPSSODescriptor>';
 
-
         if (array_key_exists('sp_org_name', $this->settings)) {
             $orgName = $this->settings['sp_org_name'];
             $orgDisplayName = $this->settings['sp_org_display_name'];
@@ -142,21 +141,43 @@ XML;
             $CF_SP= $this->settings['sp_fiscal_code'];
             $ref= $this->settings['sp_referente_email'];
             $telefono= $this->settings['sp_referente_telefono'];
+            $ipaCode = $extraSettings['ipa_code']['value'];
+            $codiceCatastale = $extraSettings['codice_catastale']['value'];
             $xml .= <<<XML
 <md:Organization>
     <md:OrganizationName xml:lang="it">$orgName</md:OrganizationName>
     <md:OrganizationDisplayName xml:lang="it">$orgDisplayName</md:OrganizationDisplayName>
     <md:OrganizationURL xml:lang="it">$entityID</md:OrganizationURL>
 </md:Organization>
-<md:ContactPerson contactType="other">
- <md:Extensions>
- <spid:VATNumber>$pIVA_SP</spid:VATNumber>
- <spid:FiscalCode>$CF_SP</spid:FiscalCode>
- </md:Extensions>
- <md:EmailAddress>$ref</md:EmailAddress>
- <md:TelephoneNumber>$telefono</md:TelephoneNumber>
- </md:ContactPerson>
 XML;
+
+            if($type === 'spid')
+            {
+                $xml .= <<<XML
+    <md:ContactPerson contactType="other">
+        <md:Extensions>
+            <spid:VATNumber>$pIVA_SP</spid:VATNumber>
+            <spid:FiscalCode>$CF_SP</spid:FiscalCode>
+            <spid:Public/>
+        </md:Extensions>
+        <md:EmailAddress>$ref</md:EmailAddress>
+        <md:TelephoneNumber>$telefono</md:TelephoneNumber>
+    </md:ContactPerson>
+XML;
+            }
+            else {
+                $xml .= <<<XML
+<md:ContactPerson contactType="administrative">
+      <md:Extensions>
+        <cie:Public/>
+         <cie:IPACode>$ipaCode</cie:IPACode>
+         <cie:Municipality>$codiceCatastale</cie:Municipality>
+      </md:Extensions>
+      <md:Company>$orgDisplayName</md:Company>
+      <md:EmailAddress>$ref</md:EmailAddress>
+   </md:ContactPerson>
+XML;
+            }
         }
         $xml .= '</md:EntityDescriptor>';
 
