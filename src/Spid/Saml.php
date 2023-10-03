@@ -83,9 +83,15 @@ XML;
         $sloLocationArray = $this->settings['sp_singlelogoutservice'] ?? array();
         $assertcsArray = $this->settings['sp_assertionconsumerservice'] ?? array();
         $attrcsArray = $this->settings['sp_attributeconsumingservice'] ?? array();
+        $type = strtolower($type);
+        $xmlns = 'https://spid.gov.it/saml-extensions';
+
+        if ($type === 'cie') {
+            $xmlns = 'https://www.cartaidentita.interno.gov.it/saml-extensions';
+        }
 
         $xml = <<<XML
-<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:$type="https://spid.gov.it/saml-extensions" entityID="$entityID" ID="$id">
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:$type="$xmlns" entityID="$entityID" ID="$id">
     <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="true" WantAssertionsSigned="true">
         <md:KeyDescriptor use="signing">
             <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
