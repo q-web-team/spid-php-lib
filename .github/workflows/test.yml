@@ -1,56 +1,40 @@
 name: Test
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  push: ~
+  workflow_dispatch: ~
 
-permissions:
-  contents: read
+env:
+  PHP_VERSION: '8.2'
+  GIT_DISCOVERY_ACROSS_FILESYSTEM: true
 
 jobs:
-  run:
-    runs-on: ${{ matrix.operating-system }}
-
-    continue-on-error: true
-
-    strategy:
-      matrix:
-        operating-system: [ubuntu-latest]
-        php-versions: ['7.4', '8.0', '8.1']
-
-    name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
+  static-tests:
+    name: "Running static tests"
+    runs-on: ubuntu-20.04
+    timeout-minutes: 20
+    container: giuseppemorelli/php-ci-cd:8.2
 
     steps:
-      - uses: actions/checkout@v3
+      -   uses: actions/checkout@v2
 
-      - name: Setup PHP with PECL extensions
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-versions }}
-          extensions: json, openssl, xml
+      -   name: Validate composer.json
+          run: composer validate --ansi --no-check-publish
 
-      - name: Validate composer.json
-        run: composer validate --strict
+      -   name: Get Composer cache directory
+          id: composer-cache
+          run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
+      -   name: Cache Composer
+          uses: actions/cache@v2
+          with:
+            path: ${{ steps.composer-cache.outputs.dir }}
+            key: ${{ runner.os }}-php-${{ env.PHP_VERSION }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-php-${{ env.PHP_VERSION }}-composer-
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
+      -   name: Composer install for tests
+          run: composer install --verbose --prefer-dist --no-progress --no-interaction --optimize-autoloader --no-suggest
 
-      - name: Download production IDPs metadata
-        run: bin/download_idp_metadata.php example/idp_metadata
-
-      - name: Coding standard
-        run: find . | grep 'php$' | grep -v vendor | grep -v tests | xargs ./vendor/bin/phpcs --standard=PSR2
-
-      - name: Run tests
-        run: ./vendor/bin/phpunit --stderr --testdox tests
+      -   name: Run tests
+          run: composer test-static

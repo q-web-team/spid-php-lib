@@ -2,13 +2,13 @@
 
 namespace Italia\Spid\Spid\Saml;
 
+use RobRichards\XMLSecLibs\XMLSecEnc;
 use RobRichards\XMLSecLibs\XMLSecurityDSig;
 use RobRichards\XMLSecLibs\XMLSecurityKey;
-use RobRichards\XMLSecLibs\XMLSecEnc;
 
 class SignatureUtils
 {
-    public static function signXml($xml, $settings) : string
+    public static function signXml($xml, $settings): string
     {
         if (!is_readable($settings['sp_key_file'])) {
             throw new \Exception('Your SP key file is not readable. Please check file permissions.');
@@ -68,7 +68,7 @@ class SignatureUtils
         return base64_encode($signature);
     }
 
-    public static function validateXmlSignature($xml, $cert) : bool
+    public static function validateXmlSignature($xml, $cert): bool
     {
         if (is_null($xml)) {
             return true;
@@ -94,7 +94,7 @@ class SignatureUtils
 
         try {
             $retVal = $objXMLSecDSig->validateReference();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             throw $e;
         }
 
@@ -125,7 +125,7 @@ class SignatureUtils
         return false;
     }
 
-    public static function generateKeyCert($settings) : array
+    public static function generateKeyCert($settings): array
     {
         $numberofdays = 3652 * 2;
         $privkey = openssl_pkey_new(array(

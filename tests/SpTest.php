@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class SpTest extends PHPUnit\Framework\TestCase
@@ -402,7 +403,6 @@ final class SpTest extends PHPUnit\Framework\TestCase
 
     public function testGetAttributes()
     {
-
         unset($_SESSION);
         $result = self::setupIdps();
 

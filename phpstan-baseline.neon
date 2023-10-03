@@ -1,0 +1,1066 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Italia\\\\Spid\\\\Sp\\:\\:__call\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Sp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Sp\\:\\:__call\\(\\) has parameter \\$arguments with no type specified\\.$#"
+			count: 1
+			path: src/Sp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Sp\\:\\:__call\\(\\) has parameter \\$method with no type specified\\.$#"
+			count: 1
+			path: src/Sp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Sp\\:\\:__construct\\(\\) has parameter \\$autoconfigure with no type specified\\.$#"
+			count: 1
+			path: src/Sp.php
+
+		-
+			message: "#^Parameter \\#1 \\$callback of function call_user_func_array expects callable\\(\\)\\: mixed, array\\{mixed, mixed\\} given\\.$#"
+			count: 1
+			path: src/Sp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Sp\\:\\:\\$protocol has no type specified\\.$#"
+			count: 1
+			path: src/Sp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:authnRequest\\(\\) has parameter \\$ass with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:authnRequest\\(\\) has parameter \\$attr with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:authnRequest\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:authnRequest\\(\\) has parameter \\$returnTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:authnRequest\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:loadFromXml\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:loadFromXml\\(\\) has parameter \\$xmlFile with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:logoutRequest\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:logoutRequest\\(\\) has parameter \\$returnTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:logoutRequest\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\IdpInterface\\:\\:logoutRequest\\(\\) has parameter \\$slo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/IdpInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\RequestInterface\\:\\:generateXml\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/RequestInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\RequestInterface\\:\\:httpPost\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/RequestInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\RequestInterface\\:\\:redirectUrl\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/RequestInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\ResponseInterface\\:\\:validate\\(\\) has parameter \\$hasAssertion with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/ResponseInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\ResponseInterface\\:\\:validate\\(\\) has parameter \\$xml with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/ResponseInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:__construct\\(\\) has parameter \\$autoconfigure with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:getIdp\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:loadIdpFromFile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:login\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:login\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:login\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:loginPost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:loginPost\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:loginPost\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:logout\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:logout\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:logoutPost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Interfaces\\\\SAMLInterface\\:\\:logoutPost\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Interfaces/SAMLInterface.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:__construct\\(\\) has parameter \\$autoconfigure with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$assertId with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$attrId with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$idpName with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogin\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogout\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogout\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogout\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogout\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:baseLogout\\(\\) has parameter \\$slo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:configure\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:getIdp\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:loadIdpFromFile\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:login\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:login\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:login\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:loginPost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:loginPost\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:loginPost\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:logout\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:logout\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:logoutPost\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:logoutPost\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Parameter \\#1 \\$private_key of function openssl_get_privatekey expects array\\|OpenSSLAsymmetricKey\\|OpenSSLCertificate\\|string, string\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Parameter \\#1 \\$public_key of function openssl_get_publickey expects array\\|OpenSSLAsymmetricKey\\|OpenSSLCertificate\\|string, string\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\:\\:\\$session has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml.php
+
+		-
+			message: "#^Argument of an invalid type array\\<SimpleXMLElement\\>\\|false\\|null supplied for foreach, only iterables are supported\\.$#"
+			count: 5
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot access offset 0 on array\\<SimpleXMLElement\\>\\|false\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot access property \\$Binding on SimpleXMLElement\\|null\\.$#"
+			count: 4
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot access property \\$Location on SimpleXMLElement\\|null\\.$#"
+			count: 4
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot access property \\$entityID on SimpleXMLElement\\|null\\.$#"
+			count: 2
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot call method attributes\\(\\) on SimpleXMLElement\\|false\\.$#"
+			count: 2
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot call method registerXPathNamespace\\(\\) on SimpleXMLElement\\|false\\.$#"
+			count: 4
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot call method xpath\\(\\) on SimpleXMLElement\\|false\\.$#"
+			count: 6
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^If condition is always true\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:__construct\\(\\) has parameter \\$sp with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequest\\(\\) has parameter \\$ass with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequest\\(\\) has parameter \\$attr with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequest\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequest\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequest\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequest\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequestCIE\\(\\) has parameter \\$ass with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequestCIE\\(\\) has parameter \\$attr with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequestCIE\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequestCIE\\(\\) has parameter \\$level with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequestCIE\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:authnRequestCIE\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:formatCert\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:formatCert\\(\\) has parameter \\$cert with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:formatCert\\(\\) has parameter \\$heads with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXml\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXml\\(\\) has parameter \\$xmlFile with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXmlCIE\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXmlCIE\\(\\) has parameter \\$xmlFile with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:logoutRequest\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:logoutRequest\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:logoutRequest\\(\\) has parameter \\$shouldRedirect with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:logoutRequest\\(\\) has parameter \\$slo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function chunk_split expects string, array\\<int, string\\>\\|string given\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$assertID has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$attrID has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$idpFileName has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$level has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$metadata has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$session has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:\\$sp has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Ternary operator condition is always false\\.$#"
+			count: 1
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 3
+			path: src/Spid/Saml/Idp.php
+
+		-
+			message: "#^Cannot access property \\$localName on DOMElement\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\BaseResponse\\:\\:validate\\(\\) has parameter \\$cert with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Parameter \\#1 \\$source of method DOMDocument\\:\\:loadXML\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\BaseResponse\\:\\:\\$response has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\BaseResponse\\:\\:\\$root has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\BaseResponse\\:\\:\\$xml has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Variable \\$_GET in isset\\(\\) always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Variable \\$_POST in isset\\(\\) always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/BaseResponse.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\LogoutRequest\\:\\:validate\\(\\) has parameter \\$hasAssertion with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/LogoutRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\LogoutRequest\\:\\:validate\\(\\) has parameter \\$xml with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/LogoutRequest.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\LogoutRequest\\:\\:\\$saml has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/LogoutRequest.php
+
+		-
+			message: "#^Undefined variable\\: \\$issuer$#"
+			count: 2
+			path: src/Spid/Saml/In/LogoutRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\LogoutResponse\\:\\:validate\\(\\) has parameter \\$hasAssertion with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/LogoutResponse.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\LogoutResponse\\:\\:validate\\(\\) has parameter \\$xml with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/LogoutResponse.php
+
+		-
+			message: "#^Cannot access property \\$childNodes on DOMElement\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Cannot access property \\$nodeValue on DOMElement\\|null\\.$#"
+			count: 2
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Cannot access property \\$value on DOMNode\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Cannot call method getNamedItem\\(\\) on DOMNamedNodeMap\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Left side of && is always true\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\Response\\:\\:spidSession\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\Response\\:\\:validate\\(\\) has parameter \\$hasAssertion with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\Response\\:\\:validate\\(\\) has parameter \\$xml with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function substr expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function trim expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\Response\\:\\:\\$saml has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/In/Response.php
+
+		-
+			message: "#^Comparison operation \"\\>\" between 3 and 1 is always true\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/AuthnRequest.php
+
+		-
+			message: "#^Else branch is unreachable because ternary operator condition is always true\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/AuthnRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\AuthnRequest\\:\\:generateXml\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/AuthnRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\AuthnRequest\\:\\:generateXmlCIE\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/AuthnRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\AuthnRequest\\:\\:httpPost\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/AuthnRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\AuthnRequest\\:\\:redirectUrl\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/AuthnRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:generateID\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:generateIssueInstant\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:getBindingLocation\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:getBindingLocation\\(\\) has parameter \\$binding with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:getBindingLocation\\(\\) has parameter \\$service with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:postForm\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:postForm\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:postForm\\(\\) has parameter \\$url with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:postFormCIE\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:postFormCIE\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:postFormCIE\\(\\) has parameter \\$url with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:redirect\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:redirect\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:redirect\\(\\) has parameter \\$url with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function base64_encode expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:\\$id has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:\\$idp has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:\\$issueInstant has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\Base\\:\\:\\$xml has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/Base.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\LogoutRequest\\:\\:generateXml\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/LogoutRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\LogoutRequest\\:\\:httpPost\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/LogoutRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\LogoutRequest\\:\\:redirectUrl\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/LogoutRequest.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\LogoutResponse\\:\\:generateXml\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/LogoutResponse.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\LogoutResponse\\:\\:httpPost\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/LogoutResponse.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Out\\\\LogoutResponse\\:\\:redirectUrl\\(\\) has parameter \\$redirectTo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Out/LogoutResponse.php
+
+		-
+			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:checkSettingsValues\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:checkSettingsValues\\(\\) has parameter \\$settings with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:cleanOpenSsl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:cleanOpenSsl\\(\\) has parameter \\$file with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:cleanOpenSsl\\(\\) has parameter \\$isCert with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:validateSettings\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Parameter \\#2 \\$needle of function strpos expects string, string\\|false\\|null given\\.$#"
+			count: 2
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:\\$validAttributeFields has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:\\$validSettings has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Undefined variable\\: \\$settings$#"
+			count: 2
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Variable \\$settings in isset\\(\\) is never defined\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
+			message: "#^Cannot access offset 'subject' on array\\|false\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Cannot access property \\$firstChild on DOMNode\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Cannot access property \\$localName on DOMNode\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Cannot access property \\$tagName on DOMNode\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Cannot call method loadKey\\(\\) on RobRichards\\\\XMLSecLibs\\\\XMLSecurityKey\\|null\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:certDNEquals\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:certDNEquals\\(\\) has parameter \\$cert with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:certDNEquals\\(\\) has parameter \\$settings with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:generateKeyCert\\(\\) has parameter \\$settings with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:query\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:query\\(\\) has parameter \\$query with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signUrl\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signUrl\\(\\) has parameter \\$keyFile with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signUrl\\(\\) has parameter \\$relayState with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signUrl\\(\\) has parameter \\$samlRequest with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signUrl\\(\\) has parameter \\$signatureAlgo with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signXml\\(\\) has parameter \\$settings with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signXml\\(\\) has parameter \\$xml with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:signXml\\(\\) should return string but returns string\\|false\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:validateXmlSignature\\(\\) has parameter \\$cert with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\SignatureUtils\\:\\:validateXmlSignature\\(\\) has parameter \\$xml with no type specified\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$cert of method RobRichards\\\\XMLSecLibs\\\\XMLSecurityDSig\\:\\:add509Cert\\(\\) expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$certificate of function openssl_x509_export expects OpenSSLCertificate\\|string, OpenSSLCertificate\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$csr of function openssl_csr_sign expects OpenSSLCertificateSigningRequest\\|string, OpenSSLCertificateSigningRequest\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$key of method RobRichards\\\\XMLSecLibs\\\\XMLSecurityKey\\:\\:loadKey\\(\\) expects string, OpenSSLAsymmetricKey\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$node of method RobRichards\\\\XMLSecLibs\\\\XMLSecurityDSig\\:\\:insertSignature\\(\\) expects DOMNode, DOMNode\\|null given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$objKey of method RobRichards\\\\XMLSecLibs\\\\XMLSecurityDSig\\:\\:verify\\(\\) expects RobRichards\\\\XMLSecLibs\\\\XMLSecurityKey, RobRichards\\\\XMLSecLibs\\\\XMLSecurityKey\\|null given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#1 \\$private_key of function openssl_get_privatekey expects array\\|OpenSSLAsymmetricKey\\|OpenSSLCertificate\\|string, string\\|false given\\.$#"
+			count: 2
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Parameter \\#3 \\$private_key of function openssl_sign expects array\\|OpenSSLAsymmetricKey\\|OpenSSLCertificate\\|string, OpenSSLAsymmetricKey\\|false given\\.$#"
+			count: 1
+			path: src/Spid/Saml/SignatureUtils.php
+
+		-
+			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Session\\:\\:isValid\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Spid/Session.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Session\\:\\:\\$attributes has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Session.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Session\\:\\:\\$idp has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Session.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Session\\:\\:\\$idpEntityID has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Session.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Session\\:\\:\\$level has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Session.php
+
+		-
+			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Session\\:\\:\\$sessionID has no type specified\\.$#"
+			count: 1
+			path: src/Spid/Session.php

@@ -5,8 +5,8 @@ namespace Italia\Spid\Spid\Saml;
 use Italia\Spid\Spid\Interfaces\IdpInterface;
 use Italia\Spid\Spid\Saml\Out\AuthnRequest;
 use Italia\Spid\Spid\Saml\Out\LogoutRequest;
-use Italia\Spid\Spid\Session;
 use Italia\Spid\Spid\Saml\Out\LogoutResponse;
+use Italia\Spid\Spid\Session;
 
 class Idp implements IdpInterface
 {
@@ -69,7 +69,6 @@ class Idp implements IdpInterface
 
     public function loadFromXmlCIE($xmlFile)
     {
-
         if (strpos($xmlFile, $this->sp->settings['idp_metadata_folder']) !== false) {
             $fileName = $xmlFile;
         } else {
@@ -137,7 +136,7 @@ class Idp implements IdpInterface
         return $x509cert;
     }
 
-    public function authnRequest($ass, $attr, $binding, $level = 1, $redirectTo = null, $shouldRedirect = true) : string
+    public function authnRequest($ass, $attr, $binding, $level = 1, $redirectTo = null, $shouldRedirect = true): string
     {
         $this->assertID = $ass;
         $this->attrID = $attr;
@@ -166,9 +165,8 @@ class Idp implements IdpInterface
     }
 
 
-    public function authnRequestCIE($ass, $attr, $binding, $level = 1, $redirectTo = null, $shouldRedirect = true) : string
+    public function authnRequestCIE($ass, $attr, $binding, $level = 1, $redirectTo = null, $shouldRedirect = true): string
     {
-
         $this->assertID = $ass;
         $this->attrID = $attr;
         $this->level = $level;
@@ -195,7 +193,7 @@ class Idp implements IdpInterface
         //return $url;
     }
 
-    public function logoutRequest(Session $session, $slo, $binding, $redirectTo = null, $shouldRedirect = true) : string
+    public function logoutRequest(Session $session, $slo, $binding, $redirectTo = null, $shouldRedirect = true): string
     {
         $this->session = $session;
 
@@ -220,7 +218,7 @@ class Idp implements IdpInterface
         exit("");
     }
 
-    public function logoutResponse() : string
+    public function logoutResponse(): string
     {
         $binding = Settings::BINDING_POST;
         $redirectTo = $this->sp->settings['sp_entityid'];

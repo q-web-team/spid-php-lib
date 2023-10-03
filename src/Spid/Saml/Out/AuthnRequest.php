@@ -54,7 +54,6 @@ XML;
 
     public function generateXmlCIE()
     {
-
         $id = $this->generateID();
 
         $issueInstant = $this->generateIssueInstant();
@@ -101,36 +100,35 @@ XML;
         $this->xml = $xml->asXML();
     }
 
-    public function redirectUrl($redirectTo = null) : string
+    public function redirectUrl($redirectTo = null): string
     {
-        if($this->idp->idpFileName!='cie')
-        {
+        if ($this->idp->idpFileName != 'cie') {
             $location = parent::getBindingLocation(Settings::BINDING_REDIRECT);
-            if (is_null($this->xml)) {$this->generateXml();}
+            if (is_null($this->xml)) {
+                $this->generateXml();
+            }
             $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
             return parent::redirect($location, $redirectTo);
-        }
-        else{
+        } else {
             $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
             $this->generateXmlCIE();
             $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
             return parent::postFormCIE($location, $redirectTo);
         }
-
-
     }
 
-    public function httpPost($redirectTo = null) : string
+    public function httpPost($redirectTo = null): string
     {
-        if($this->idp->idpFileName!='cie')
-        {
+        if ($this->idp->idpFileName != 'cie') {
             $location = parent::getBindingLocation(Settings::BINDING_REDIRECT);
-            if (is_null($this->xml)) {$this->generateXml();}
-        }
-        else{
-
+            if (is_null($this->xml)) {
+                $this->generateXml();
+            }
+        } else {
             $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
-            if (is_null($this->xml)) {$this->generateXml();}
+            if (is_null($this->xml)) {
+                $this->generateXml();
+            }
             $this->generateXmlCIE();
         }
         $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);

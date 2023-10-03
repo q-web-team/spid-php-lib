@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 final class IdpTest extends PHPUnit\Framework\TestCase
@@ -37,8 +38,8 @@ final class IdpTest extends PHPUnit\Framework\TestCase
 
     public function testCanBeCreatedFromValidSP()
     {
-       $sp = new Italia\Spid\Sp(IdpTest::$settings);
-       $this->assertInstanceOf(
+        $sp = new Italia\Spid\Sp(IdpTest::$settings);
+        $this->assertInstanceOf(
             Italia\Spid\Spid\Saml\Idp::class,
             new Italia\Spid\Spid\Saml\Idp($sp)
         );
@@ -73,8 +74,8 @@ final class IdpTest extends PHPUnit\Framework\TestCase
             Italia\Spid\Spid\Saml\Idp::class,
             $loaded
         );
-      $this->assertNotEmpty($idp->idpFileName);
-      $this->assertNotEmpty($idp->metadata);
+        $this->assertNotEmpty($idp->idpFileName);
+        $this->assertNotEmpty($idp->metadata);
     }
 
     public function testLoadXMLWIthWrongFilePath()

@@ -2,8 +2,8 @@
 
 namespace Italia\Spid\Spid\Saml\In;
 
-use Italia\Spid\Spid\Saml\SignatureUtils;
 use Italia\Spid\Spid\Saml;
+use Italia\Spid\Spid\Saml\SignatureUtils;
 
 /*
 * Generates the proper response object at runtime by reading the input XML.
@@ -66,7 +66,7 @@ class BaseResponse
         }
     }
 
-    public function validate($cert) : bool
+    public function validate($cert): bool
     {
         if (is_null($this->response)) {
             return true;

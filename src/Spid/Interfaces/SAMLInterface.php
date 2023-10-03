@@ -54,7 +54,7 @@ interface SAMLInterface
     // the individual files are loaded with loadIdpFromFile($filename)
     // returns an array mapping filename (without extension) => entityID (used for spid-smart-button)
     // if no IdPs are found returns an empty array
-    public function getIdpList() : array;
+    public function getIdpList(): array;
 
     // alias of loadIdpFromFile
     public function getIdp(string $filename);
@@ -75,9 +75,9 @@ interface SAMLInterface
         string $idpFilename,
         int $assertID,
         int $attrID,
-               $level = 1,
+        $level = 1,
         string $redirectTo = null,
-               $shouldRedirect = true
+        $shouldRedirect = true
     );
 
     // performs login with POST Binding
@@ -86,9 +86,9 @@ interface SAMLInterface
         string $idpFilename,
         int $assertID,
         int $attrID,
-               $level = 1,
+        $level = 1,
         string $redirectTo = null,
-               $shouldRedirect = true
+        $shouldRedirect = true
     );
 
     // This method takes the necessary steps to update the user login status, and return a boolean representing the
@@ -101,7 +101,7 @@ interface SAMLInterface
     // SESSION AND STORING USER ATTRIBUTES.
     // SIMILARLY, AFTER A LOGOUT() CALLING THIS METHOD WILL VALIDATE THE RESULT AND DESTROY THE SESSION.
     // LOGIN() AND LOGOUT() ALONE INTERACT WITH THE IDP, BUT DON'T CHECK FOR RESULTS AND UPDATE THE SP
-    public function isAuthenticated() : bool;
+    public function isAuthenticated(): bool;
 
     // performs logout with REDIRECT binding
     // $slo: index of the singlelogout service as per the SP metadata
@@ -117,5 +117,5 @@ interface SAMLInterface
 
     // returns attributes as an array or an empty array if not authenticated
     // example: array('name' => 'Franco', 'familyName' => 'Rossi', 'fiscalNumber' => 'FFFRRR88A12T4441R',)
-    public function getAttributes() : array;
+    public function getAttributes(): array;
 }

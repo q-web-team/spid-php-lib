@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.15.0@5c774aca4746caf3d239d9c8cadb9f882ca29352">
+  <file src="src/Spid/Saml.php">
+    <ParamNameMismatch>
+      <code>$assertId</code>
+      <code>$assertId</code>
+      <code>$attrId</code>
+      <code>$attrId</code>
+      <code>$idpName</code>
+      <code>$idpName</code>
+    </ParamNameMismatch>
+  </file>
+  <file src="src/Spid/Saml/Idp.php">
+    <ForbiddenCode>
+      <code>var_dump($url)</code>
+    </ForbiddenCode>
+    <ParamNameMismatch>
+      <code>$binding</code>
+      <code>$level</code>
+      <code>$redirectTo</code>
+      <code>$redirectTo</code>
+    </ParamNameMismatch>
+    <PossiblyFalseReference>
+      <code>registerXPathNamespace</code>
+      <code>registerXPathNamespace</code>
+    </PossiblyFalseReference>
+    <PossiblyInvalidArgument>
+      <code>$x509cert</code>
+    </PossiblyInvalidArgument>
+    <PossiblyNullArrayAccess>
+      <code><![CDATA[$xml->xpath('//ds:X509Certificate')[0]]]></code>
+    </PossiblyNullArrayAccess>
+    <PossiblyNullIterator>
+      <code><![CDATA[$xml->xpath('//ds:X509Certificate')]]></code>
+      <code><![CDATA[$xml->xpath('//md:AssertionConsumerService')]]></code>
+      <code><![CDATA[$xml->xpath('//md:SingleLogoutService')]]></code>
+      <code><![CDATA[$xml->xpath('//md:SingleLogoutService')]]></code>
+      <code><![CDATA[$xml->xpath('//md:SingleSignOnService')]]></code>
+    </PossiblyNullIterator>
+    <PossiblyNullPropertyFetch>
+      <code><![CDATA[$xml->attributes()->entityID]]></code>
+      <code><![CDATA[$xml->attributes()->entityID]]></code>
+    </PossiblyNullPropertyFetch>
+    <PossiblyNullReference>
+      <code>__toString</code>
+      <code>__toString</code>
+      <code>__toString</code>
+    </PossiblyNullReference>
+    <RedundantCondition>
+      <code>$binding == Settings::BINDING_POST</code>
+      <code><![CDATA[$logoutResponse->httpPost($redirectTo)]]></code>
+    </RedundantCondition>
+    <TypeDoesNotContainType>
+      <code>$binding == Settings::BINDING_REDIRECT</code>
+      <code>$binding == Settings::BINDING_REDIRECT</code>
+    </TypeDoesNotContainType>
+  </file>
+  <file src="src/Spid/Saml/In/BaseResponse.php">
+    <PossiblyInvalidArgument>
+      <code><![CDATA[$_GET['SAMLResponse']]]></code>
+      <code><![CDATA[$_POST['SAMLResponse']]]></code>
+    </PossiblyInvalidArgument>
+    <TypeDoesNotContainNull>
+      <code>!isset($_GET)</code>
+      <code>!isset($_POST)</code>
+    </TypeDoesNotContainNull>
+  </file>
+  <file src="src/Spid/Saml/In/LogoutRequest.php">
+    <UndefinedVariable>
+      <code>$issuer</code>
+      <code>$issuer</code>
+    </UndefinedVariable>
+  </file>
+  <file src="src/Spid/Saml/In/Response.php">
+    <PossiblyNullArgument>
+      <code><![CDATA[$attr->nodeValue]]></code>
+    </PossiblyNullArgument>
+    <PossiblyNullArrayOffset>
+      <code>$attributes</code>
+    </PossiblyNullArrayOffset>
+    <PossiblyNullPropertyFetch>
+      <code><![CDATA[$attr->attributes->getNamedItem('Name')->value]]></code>
+    </PossiblyNullPropertyFetch>
+    <PossiblyNullReference>
+      <code>getNamedItem</code>
+    </PossiblyNullReference>
+    <RedundantCondition>
+      <code>$hasAssertion</code>
+    </RedundantCondition>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$attr->attributes->getNamedItem('Name')->value]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+  <file src="src/Spid/Saml/Out/AuthnRequest.php">
+    <RedundantCondition>
+      <code><![CDATA[$level > 1]]></code>
+    </RedundantCondition>
+    <TypeDoesNotContainType>
+      <code><![CDATA["false"]]></code>
+    </TypeDoesNotContainType>
+  </file>
+  <file src="src/Spid/Saml/Out/Base.php">
+    <PossiblyUndefinedArrayOffset>
+      <code><![CDATA[$_SERVER['HTTP_HOST']]]></code>
+      <code><![CDATA[$_SERVER['REQUEST_URI']]]></code>
+    </PossiblyUndefinedArrayOffset>
+    <PossiblyUndefinedVariable>
+      <code>$parameters</code>
+    </PossiblyUndefinedVariable>
+  </file>
+  <file src="src/Spid/Saml/Settings.php">
+    <UndefinedVariable>
+      <code>$settings</code>
+    </UndefinedVariable>
+  </file>
+  <file src="src/Spid/Saml/SignatureUtils.php">
+    <InvalidArgument>
+      <code>$key</code>
+    </InvalidArgument>
+    <PossiblyNullArgument>
+      <code>$rootNode</code>
+    </PossiblyNullArgument>
+    <PossiblyNullPropertyFetch>
+      <code><![CDATA[$rootNode->firstChild]]></code>
+      <code><![CDATA[$rootNode->localName]]></code>
+      <code><![CDATA[$rootNode->tagName]]></code>
+    </PossiblyNullPropertyFetch>
+    <PossiblyNullReference>
+      <code>loadKey</code>
+    </PossiblyNullReference>
+    <UndefinedPropertyFetch>
+      <code><![CDATA[$rootNode->tagName]]></code>
+    </UndefinedPropertyFetch>
+  </file>
+</files>

@@ -4,11 +4,11 @@ namespace Italia\Spid\Spid\Saml;
 
 class Settings
 {
-    const BINDING_REDIRECT = 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect';
-    const BINDING_POST = 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST';
+    public const BINDING_REDIRECT = 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect';
+    public const BINDING_POST = 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST';
 
-    const REQUIRED = 1;
-    const NOT_REQUIRED = 0;
+    public const REQUIRED = 1;
+    public const NOT_REQUIRED = 0;
     // Settings with value 1 are mandatory
     private static $validSettings = [
         'sp_entityid' => self::REQUIRED,
@@ -20,10 +20,10 @@ class Settings
         'sp_attributeconsumingservice' => self::NOT_REQUIRED,
         'sp_org_name' => self::NOT_REQUIRED,
         'sp_org_display_name' => self::NOT_REQUIRED,
-        'sp_vat_number'  => self::NOT_REQUIRED,
-        'sp_fiscal_code'  => self::NOT_REQUIRED,
-        'sp_referente_email'  => self::NOT_REQUIRED,
-        'sp_referente_telefono'  => self::NOT_REQUIRED,
+        'sp_vat_number' => self::NOT_REQUIRED,
+        'sp_fiscal_code' => self::NOT_REQUIRED,
+        'sp_referente_email' => self::NOT_REQUIRED,
+        'sp_referente_telefono' => self::NOT_REQUIRED,
         'sp_key_cert_values' => [
             self::NOT_REQUIRED => [
                 'countryName' => self::REQUIRED,
@@ -113,7 +113,7 @@ class Settings
             $k = $file;
         } else {
             if (!is_readable($file)) {
-                throw new \Exception('File '.$file.' is not readable. Please check file permissions.');
+                throw new \Exception('File ' . $file . ' is not readable. Please check file permissions.');
             }
             $k = file_get_contents($file);
         }
@@ -152,7 +152,7 @@ class Settings
                 }
                 array_walk($acs, function ($field) {
                     if (!in_array($field, self::$validAttributeFields)) {
-                        throw new \InvalidArgumentException('Invalid Attribute field '. $field .' requested');
+                        throw new \InvalidArgumentException('Invalid Attribute field ' . $field . ' requested');
                     }
                 });
             });
@@ -198,13 +198,13 @@ class Settings
             if (strcasecmp($slo[1], "POST") != 0 &&
                 strcasecmp($slo[1], "REDIRECT") != 0 &&
                 strcasecmp($slo[1], "") != 0) {
-                throw new \InvalidArgumentException('sp_singlelogoutservice elements Binding value should be one of '.
+                throw new \InvalidArgumentException('sp_singlelogoutservice elements Binding value should be one of ' .
                     '"POST", "REDIRECT", or "" (empty string, defaults to POST)');
             }
             if (strpos($slo[0], $host) === false) {
                 throw new \InvalidArgumentException(
                     'sp_singlelogoutservice elements Location domain should be ' . $host .
-                    ', got ' .  parse_url($slo[0], PHP_URL_HOST) . 'instead'
+                    ', got ' . parse_url($slo[0], PHP_URL_HOST) . 'instead'
                 );
             }
         });

@@ -7,7 +7,6 @@ use Italia\Spid\Spid\Saml;
 
 class LogoutRequest implements ResponseInterface
 {
-
     private $saml;
 
     public function __construct(Saml $saml)
@@ -15,7 +14,7 @@ class LogoutRequest implements ResponseInterface
         $this->saml = $saml;
     }
 
-    public function validate($xml, $hasAssertion) : bool
+    public function validate($xml, $hasAssertion): bool
     {
         $root = $xml->getElementsByTagName('LogoutRequest')->item(0);
 
