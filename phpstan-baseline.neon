@@ -541,7 +541,7 @@ parameters:
 			path: src/Spid/Saml/Idp.php
 
 		-
-			message: "#^Cannot access property \\$localName on DOMElement\\|null\\.$#"
+			message: "#^Cannot access property \\$tagName on DOMElement\\|null\\.$#"
 			count: 1
 			path: src/Spid/Saml/In/BaseResponse.php
 
@@ -557,11 +557,6 @@ parameters:
 
 		-
 			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\BaseResponse\\:\\:\\$response has no type specified\\.$#"
-			count: 1
-			path: src/Spid/Saml/In/BaseResponse.php
-
-		-
-			message: "#^Property Italia\\\\Spid\\\\Spid\\\\Saml\\\\In\\\\BaseResponse\\:\\:\\$root has no type specified\\.$#"
 			count: 1
 			path: src/Spid/Saml/In/BaseResponse.php
 

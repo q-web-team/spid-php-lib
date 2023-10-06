@@ -18,10 +18,10 @@ class AuthnRequest extends Base implements RequestInterface
         $assertID = $this->idp->assertID;
         $assertID = 3;
         $attrID = $this->idp->attrID;
-       
+
         $level = $this->idp->level;
         $force = $level > 1 ? "true" : "false";
-        
+
         $authnRequestXml = <<<XML
 <saml2p:AuthnRequest 
     xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
@@ -51,12 +51,11 @@ XML;
         }
         $this->xml = $xml->asXML();
     }
-    
-     public function generateXmlCIE()
+
+    public function generateXmlCIE()
     {
-       
         $id = $this->generateID();
-        
+
         $issueInstant = $this->generateIssueInstant();
         $entityId = $this->idp->sp->settings['sp_entityid'];
 
@@ -64,10 +63,10 @@ XML;
         $assertID = $this->idp->assertID;
         $assertID = 3;
         $attrID = $this->idp->attrID;
-       
+
         $level = 3;
         $force = $level > 1 ? "true" : "false";
-        
+
         $authnRequestXml = <<<XML
 <saml2p:AuthnRequest 
     xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol" 
@@ -101,39 +100,41 @@ XML;
         $this->xml = $xml->asXML();
     }
 
-    public function redirectUrl($redirectTo = null) : string
+    public function redirectUrl($redirectTo = null): string
     {
-           if($this->idp->idpFileName!='cie')
-           {
+        if ($this->idp->idpFileName != 'cie') {
             $location = parent::getBindingLocation(Settings::BINDING_REDIRECT);
-            if (is_null($this->xml)) {$this->generateXml();}
-                $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
-                return parent::redirect($location, $redirectTo);
+            if (is_null($this->xml)) {
+                $this->generateXml();
             }
-            else{
-                 $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
-                 $this->generateXmlCIE();
-                 $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
-                 return parent::postFormCIE($location, $redirectTo);
-            }
-        
-        
+            $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
+
+            return parent::redirect($location, $redirectTo);
+        } else {
+            $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
+            $this->generateXmlCIE();
+            $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
+
+            return parent::postFormCIE($location, $redirectTo);
+        }
     }
 
-    public function httpPost($redirectTo = null) : string
+    public function httpPost($redirectTo = null): string
     {
-       if($this->idp->idpFileName!='cie')
-           {
+        if ($this->idp->idpFileName != 'cie') {
             $location = parent::getBindingLocation(Settings::BINDING_REDIRECT);
-            if (is_null($this->xml)) {$this->generateXml();}
+            if (is_null($this->xml)) {
+                $this->generateXml();
             }
-            else{
-           
-                 $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
-                if (is_null($this->xml)) {$this->generateXml();}
-                 $this->generateXmlCIE();
+        } else {
+            $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
+            if (is_null($this->xml)) {
+                $this->generateXml();
             }
+            $this->generateXmlCIE();
+        }
         $this->xml = SignatureUtils::signXml($this->xml, $this->idp->sp->settings);
+
         return parent::postForm($location, $redirectTo);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Italia\Spid\Spid\Saml\In;
 
-use Italia\Spid\Spid\Saml\SignatureUtils;
 use Italia\Spid\Spid\Saml;
+use Italia\Spid\Spid\Saml\SignatureUtils;
 
 /*
 * Generates the proper response object at runtime by reading the input XML.
@@ -94,7 +94,7 @@ class BaseResponse
             throw new \Exception("Invalid Response. Response must contain at least one signature");
         }
 
-        $responseSignature  = null;
+        $responseSignature = null;
         $assertionSignature = null;
         if ($signatures->length > 0) {
             foreach ($signatures as $key => $item) {
