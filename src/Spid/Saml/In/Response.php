@@ -3,11 +3,12 @@
 namespace Italia\Spid\Spid\Saml\In;
 
 use Italia\Spid\Spid\Interfaces\ResponseInterface;
-use Italia\Spid\Spid\Saml;
 use Italia\Spid\Spid\Session;
+use Italia\Spid\Spid\Saml;
 
 class Response implements ResponseInterface
 {
+
     private $saml;
 
     public function __construct(Saml $saml)
@@ -20,7 +21,7 @@ class Response implements ResponseInterface
         $accepted_clock_skew_seconds = isset($this->saml->settings['accepted_clock_skew_seconds']) ? $this->saml->settings['accepted_clock_skew_seconds'] : 0;
 
         $root = $xml->getElementsByTagName('Response')->item(0);
-        $sp_entityid = "https://servizionline.comune.mira.ve.it";
+        $sp_entityid="https://login.comune.cittadella.pd.it";
         if ($root->getAttribute('Version') == "") {
             throw new \Exception("Missing Version attribute");
         } elseif ($root->getAttribute('Version') != '2.0') {
@@ -113,7 +114,7 @@ class Response implements ResponseInterface
 
         if ($attributeStatements->length > 0) {
             foreach ($attributeStatements->item(0)->childNodes as $attr) {
-                if ($attr->hasAttributes()) {
+                if($attr->hasAttributes()) {
                     $attributes[$attr->attributes->getNamedItem('Name')->value] = trim($attr->nodeValue);
                 }
             }
