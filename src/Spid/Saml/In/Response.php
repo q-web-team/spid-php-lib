@@ -21,7 +21,7 @@ class Response implements ResponseInterface
         $accepted_clock_skew_seconds = isset($this->saml->settings['accepted_clock_skew_seconds']) ? $this->saml->settings['accepted_clock_skew_seconds'] : 0;
 
         $root = $xml->getElementsByTagName('Response')->item(0);
-        $sp_entityid="https://login.comune.cittadella.pd.it";
+        $sp_entityid="https://login.comune.cittadella.pd.it/spid";
         if ($root->getAttribute('Version') == "") {
             throw new \Exception("Missing Version attribute");
         } elseif ($root->getAttribute('Version') != '2.0') {

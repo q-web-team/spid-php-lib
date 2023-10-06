@@ -36,7 +36,7 @@ AttributeConsumingServiceIndex="1"
     <saml2:Issuer
         xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" 
 	    Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
-        NameQualifier="https://login.comune.cittadella.pd.it">https://login.comune.cittadella.pd.it</saml2:Issuer>
+        NameQualifier="https://login.comune.cittadella.pd.it/spid">https://login.comune.cittadella.pd.it/spid</saml2:Issuer>
     <saml2p:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" />
     <saml2p:RequestedAuthnContext Comparison="minimum">
         <saml2:AuthnContextClassRef xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://www.spid.gov.it/SpidL$level</saml2:AuthnContextClassRef>
@@ -62,6 +62,7 @@ XML;
 
         $idpEntityId = $this->idp->metadata['idpEntityId'];
         $assertID = $this->idp->assertID;
+        // 1 se Qweb è fornitore
         $assertID = 1;
         $attrID = $this->idp->attrID;
        
@@ -84,8 +85,8 @@ AttributeConsumingServiceIndex="$assertID"
     <saml2:Issuer
        
 	    Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
-        NameQualifier="https://login.comune.cittadella.pd.it"
-        >https://login.comune.cittadella.pd.it</saml2:Issuer>
+        NameQualifier="https://login.comune.cittadella.pd.it/spid"
+        >https://login.comune.cittadella.pd.it/spid</saml2:Issuer>
     <saml2p:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" />
     <saml2p:RequestedAuthnContext Comparison="minimum">
         <saml2:AuthnContextClassRef>https://www.spid.gov.it/SpidL$level</saml2:AuthnContextClassRef>
