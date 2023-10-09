@@ -10,14 +10,14 @@ class AuthnRequest extends Base implements RequestInterface
 {
     public function generateXml()
     {
-        $id           = $this->generateID();
+        $id = $this->generateID();
         $issueInstant = $this->generateIssueInstant();
-        $entityId     = $this->idp->sp->settings['sp_entityid'];
+        $entityId = $this->idp->sp->settings['sp_entityid'];
 
         $idpEntityId = $this->idp->metadata['idpEntityId'];
-        $assertID    = $this->idp->assertID;
-        $assertID    = 3;
-        $attrID      = $this->idp->attrID;
+        $assertID = $this->idp->assertID;
+        $assertID = 3;
+        $attrID = $this->idp->attrID;
 
         $level = $this->idp->level;
         $force = $level > 1 ? "true" : "false";
@@ -58,7 +58,7 @@ XML;
         $issueInstant = $this->generateIssueInstant();
 
         $assertID = $this->idp->assertID;
-        $attrID   = $this->idp->attrID;
+        $attrID = $this->idp->attrID;
 
         $level = 3;
         $force = $level > 1 ? "true" : "false";
@@ -113,8 +113,6 @@ XML;
 
             return parent::postFormCIE($location, $redirectTo);
         }
-
-
     }
 
     public function httpPost($redirectTo = null): string
@@ -125,7 +123,6 @@ XML;
                 $this->generateXml();
             }
         } else {
-
             $location = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
             if (is_null($this->xml)) {
                 $this->generateXml();

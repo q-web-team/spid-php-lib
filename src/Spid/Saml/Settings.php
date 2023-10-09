@@ -19,11 +19,11 @@ class Settings
         'sp_attributeconsumingservice' => self::NOT_REQUIRED,
         'sp_org_name' => self::NOT_REQUIRED,
         'sp_org_display_name' => self::NOT_REQUIRED,
-        'sp_vat_number'  => self::NOT_REQUIRED,
-        'sp_fiscal_code'  => self::NOT_REQUIRED,
-        'sp_referente_email'  => self::NOT_REQUIRED,
-        'sp_referente_telefono'  => self::NOT_REQUIRED,
-        'sp_key_cert_values' => [ 
+        'sp_vat_number' => self::NOT_REQUIRED,
+        'sp_fiscal_code' => self::NOT_REQUIRED,
+        'sp_referente_email' => self::NOT_REQUIRED,
+        'sp_referente_telefono' => self::NOT_REQUIRED,
+        'sp_key_cert_values' => [
             self::NOT_REQUIRED => [
                 'countryName' => self::REQUIRED,
                 'stateOrProvinceName' => self::REQUIRED,
@@ -89,7 +89,7 @@ class Settings
 
         $invalidFields = array_diff_key($settings, self::$validSettings);
         // Check for settings that have child values
-        array_walk(self::$validSettings, function($v, $k) use (&$invalidFields) {
+        array_walk(self::$validSettings, function ($v, $k) use (&$invalidFields) {
             // Child values found, check if settings array is set for that key
             if (is_array($v) && isset($settings[$k])) {
                 // $v has at most 2 keys, self::REQUIRED and self::NOT_REQUIRED
@@ -115,7 +115,7 @@ class Settings
             $k = $file;
         } else {
             if (!is_readable($file)) {
-                throw new \Exception('File '.$file.' is not readable. Please check file permissions.');
+                throw new \Exception('File ' . $file . ' is not readable. Please check file permissions.');
             }
             $k = file_get_contents($file);
         }
@@ -152,7 +152,7 @@ class Settings
                 }
                 array_walk($acs, function ($field) {
                     if (!in_array($field, self::$validAttributeFields)) {
-                        throw new \InvalidArgumentException('Invalid Attribute field '. $field .' requested');
+                        throw new \InvalidArgumentException('Invalid Attribute field ' . $field . ' requested');
                     }
                 });
             });
@@ -167,7 +167,7 @@ class Settings
         array_walk($settings['sp_assertionconsumerservice'], function ($acs) use ($host) {
             if (strpos($acs, $host) === false) {
                 throw new \InvalidArgumentException('sp_assertionconsumerservice elements Location domain should be ' . $host .
-                    ', got ' .  parse_url($acs, PHP_URL_HOST) . ' instead');
+                    ', got ' . parse_url($acs, PHP_URL_HOST) . ' instead');
             }
         });
 
@@ -197,7 +197,7 @@ class Settings
             }
             if (strpos($slo[0], $host) === false) {
                 throw new \InvalidArgumentException('sp_singlelogoutservice elements Location domain should be ' . $host .
-                    ', got ' .  parse_url($slo[0], PHP_URL_HOST) . 'instead');
+                    ', got ' . parse_url($slo[0], PHP_URL_HOST) . 'instead');
             }
         });
         if (isset($settings['sp_key_cert_values'])) {
@@ -217,12 +217,12 @@ class Settings
             }
         }
         if (isset($settings['accepted_clock_skew_seconds'])) {
-          if (!is_numeric($settings['accepted_clock_skew_seconds'])) {
-            throw new \Exception('accepted_clock_skew_seconds should be a number');
-          }
-          if ($settings['accepted_clock_skew_seconds'] < 0) {
-            throw new \Exception('accepted_clock_skew_seconds should be greater than 0');
-          }
+            if (!is_numeric($settings['accepted_clock_skew_seconds'])) {
+                throw new \Exception('accepted_clock_skew_seconds should be a number');
+            }
+            if ($settings['accepted_clock_skew_seconds'] < 0) {
+                throw new \Exception('accepted_clock_skew_seconds should be greater than 0');
+            }
         }
     }
 }
