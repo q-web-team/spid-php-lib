@@ -58,12 +58,8 @@ XML;
         $id = $this->generateID();
         
         $issueInstant = $this->generateIssueInstant();
-        $entityId = $this->idp->sp->settings['sp_entityid'];
 
-        $idpEntityId = $this->idp->metadata['idpEntityId'];
         $assertID = $this->idp->assertID;
-        // 1 se Qweb è fornitore
-        $assertID = 1;
         $attrID = $this->idp->attrID;
        
         $level = 3;

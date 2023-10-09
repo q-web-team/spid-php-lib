@@ -128,7 +128,7 @@ XML;
             $xml .= <<<XML
 
         <md:AttributeConsumingService index="$i">
-            <md:ServiceName xml:lang="it">Set $i</md:ServiceName>       
+            <md:ServiceName xml:lang="it">Servizi Online by QWEB</md:ServiceName>       
 XML;
             foreach ($attrcsArray[$i] as $attr) {
                 $xml .= <<<XML
