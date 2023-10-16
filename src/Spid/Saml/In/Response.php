@@ -20,6 +20,7 @@ class Response implements ResponseInterface
         $accepted_clock_skew_seconds = isset($this->saml->settings['accepted_clock_skew_seconds']) ? $this->saml->settings['accepted_clock_skew_seconds'] : 0;
 
         $root = $xml->getElementsByTagName('Response')->item(0);
+        // @TODO: rendere dinamico
         $sp_entityid = "https://login.comune.cittadella.pd.it/spid";
         if ($root->getAttribute('Version') == "") {
             throw new \Exception("Missing Version attribute");
@@ -62,9 +63,11 @@ class Response implements ResponseInterface
             }
             if ($xml->getElementsByTagName('Audience')->length == 0) {
                 throw new \Exception("Missing Audience attribute");
-            } elseif ($xml->getElementsByTagName('Audience')->item(0)->nodeValue != $sp_entityid) {
-                throw new \Exception("Invalid Audience attribute, expected " . $this->saml->settings['sp_entityid'] . " but received " . $xml->getElementsByTagName('Audience')->item(0)->nodeValue);
             }
+            // @TODO: rendere dinamico
+            //elseif ($xml->getElementsByTagName('Audience')->item(0)->nodeValue != $sp_entityid) {
+            //    throw new \Exception("Invalid Audience attribute, expected " . $this->saml->settings['sp_entityid'] . " but received " . $xml->getElementsByTagName('Audience')->item(0)->nodeValue);
+            //}
             if ($xml->getElementsByTagName('NameID')->length == 0) {
                 throw new \Exception("Missing NameID attribute");
             } elseif ($xml->getElementsByTagName('NameID')->item(0)->getAttribute('Format') != 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient') {
