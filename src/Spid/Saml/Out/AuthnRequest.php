@@ -16,7 +16,7 @@ class AuthnRequest extends Base implements RequestInterface
 
         $idpEntityId = $this->idp->metadata['idpEntityId'];
         $assertID = $this->idp->assertID;
-        $assertID = 3;
+        // $assertID = 3;
         $attrID = $this->idp->attrID;
 
         $level = $this->idp->level;
@@ -36,7 +36,7 @@ AttributeConsumingServiceIndex="1"
     <saml2:Issuer
         xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" 
 	    Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
-        NameQualifier="https://login.comune.cittadella.pd.it/spid">https://login.comune.cittadella.pd.it/spid</saml2:Issuer>
+        NameQualifier="https://login.comune.colceresa.vi.it/spid">https://login.comune.colceresa.vi.it/spid</saml2:Issuer>
     <saml2p:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" />
     <saml2p:RequestedAuthnContext Comparison="minimum">
         <saml2:AuthnContextClassRef xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://www.spid.gov.it/SpidL$level</saml2:AuthnContextClassRef>
@@ -59,6 +59,7 @@ XML;
 
         $assertID = $this->idp->assertID;
         $attrID = $this->idp->attrID;
+        $entityID = $this->idp->attrID;
 
         $level = 3;
         $force = $level > 1 ? "true" : "false";
@@ -79,8 +80,8 @@ AttributeConsumingServiceIndex="$assertID"
     <saml2:Issuer
        
 	    Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
-        NameQualifier="https://login.comune.cittadella.pd.it/spid"
-        >https://login.comune.cittadella.pd.it/spid</saml2:Issuer>
+        NameQualifier="$entityID"
+        >https://login.comune.colceresa.vi.it/spid</saml2:Issuer>
     <saml2p:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" />
     <saml2p:RequestedAuthnContext Comparison="minimum">
         <saml2:AuthnContextClassRef>https://www.spid.gov.it/SpidL$level</saml2:AuthnContextClassRef>
