@@ -15,9 +15,10 @@ class Sp
 
     public function __construct(array $settings, String $protocol = null, $autoconfigure = true)
     {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+        // Sessione gestita dall'applicativo
+        //if (session_status() == PHP_SESSION_NONE) {
+        //    session_start();
+        //}
         switch ($protocol) {
             case 'saml':
                 $this->protocol = new Spid\Saml($settings, $autoconfigure);
