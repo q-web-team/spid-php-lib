@@ -121,7 +121,7 @@ XML;
             $location = htmlspecialchars($assertcsArray[$i], ENT_XML1);
             $xml .= <<<XML
 
-        <md:AssertionConsumerService index="$i" isDefault="true" Location="$location" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
+        <md:AssertionConsumerService index="$i" isDefault="true" Location="$location" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"/>
 XML;
         }
         for ($i = 0; $i < count($attrcsArray); $i++) {
