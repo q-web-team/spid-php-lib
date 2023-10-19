@@ -30,8 +30,8 @@ class AuthnRequest extends Base implements RequestInterface
     IssueInstant="$issueInstant"
     Destination="$idpEntityId"
     ForceAuthn="$force"
-   AssertionConsumerServiceIndex="1" 
-AttributeConsumingServiceIndex="1"
+   AssertionConsumerServiceIndex="$assertID" 
+AttributeConsumingServiceIndex="$attrID"
     >
     <saml2:Issuer
         xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" 
