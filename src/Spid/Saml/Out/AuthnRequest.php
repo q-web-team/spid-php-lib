@@ -36,7 +36,7 @@ AttributeConsumingServiceIndex="1"
     <saml2:Issuer
         xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" 
 	    Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
-        NameQualifier="https://login.comune.colceresa.vi.it/spid">https://login.comune.colceresa.vi.it/spid</saml2:Issuer>
+        NameQualifier="$entityId">$entityId</saml2:Issuer>
     <saml2p:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" />
     <saml2p:RequestedAuthnContext Comparison="minimum">
         <saml2:AuthnContextClassRef xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://www.spid.gov.it/SpidL$level</saml2:AuthnContextClassRef>
