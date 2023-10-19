@@ -164,12 +164,12 @@ class Settings
         if (count($settings['sp_assertionconsumerservice']) == 0) {
             throw new \InvalidArgumentException('sp_assertionconsumerservice should contain at least one element');
         }
-        array_walk($settings['sp_assertionconsumerservice'], function ($acs) use ($host) {
-            if (strpos($acs, $host) === false) {
-                throw new \InvalidArgumentException('sp_assertionconsumerservice elements Location domain should be ' . $host .
-                    ', got ' . parse_url($acs, PHP_URL_HOST) . ' instead');
-            }
-        });
+        // Disattivazione check dominio con entity id (forse da parametrizzare)        //array_walk($settings['sp_assertionconsumerservice'], function ($acs) use ($host) {
+        //    if (strpos($acs, $host) === false) {
+        //        throw new \InvalidArgumentException('sp_assertionconsumerservice elements Location domain should be ' . $host .
+        //            ', got ' . parse_url($acs, PHP_URL_HOST) . ' instead');
+        //    }
+        //});
 
         if (!is_array($settings['sp_singlelogoutservice'])) {
             throw new \InvalidArgumentException('sp_singlelogoutservice should be an array');
@@ -195,10 +195,11 @@ class Settings
                 throw new \InvalidArgumentException('sp_singlelogoutservice elements Binding value should be one of\
                     "POST", "REDIRECT", or "" (empty string, defaults to POST)');
             }
-            if (strpos($slo[0], $host) === false) {
-                throw new \InvalidArgumentException('sp_singlelogoutservice elements Location domain should be ' . $host .
-                    ', got ' . parse_url($slo[0], PHP_URL_HOST) . 'instead');
-            }
+            // Disattivazione check dominio con entity id (forse da parametrizzare)
+            //if (strpos($slo[0], $host) === false) {
+            //    throw new \InvalidArgumentException('sp_singlelogoutservice elements Location domain should be ' . $host .
+            //        ', got ' . parse_url($slo[0], PHP_URL_HOST) . 'instead');
+            //}
         });
         if (isset($settings['sp_key_cert_values'])) {
             if (!is_array($settings['sp_key_cert_values'])) {
