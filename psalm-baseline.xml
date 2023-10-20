@@ -22,7 +22,6 @@
     </ParamNameMismatch>
     <PossiblyFalseReference>
       <code>registerXPathNamespace</code>
-      <code>registerXPathNamespace</code>
     </PossiblyFalseReference>
     <PossiblyInvalidArgument>
       <code>$x509cert</code>
@@ -31,18 +30,13 @@
       <code><![CDATA[$xml->xpath('//ds:X509Certificate')[0]]]></code>
     </PossiblyNullArrayAccess>
     <PossiblyNullIterator>
-      <code><![CDATA[$xml->xpath('//ds:X509Certificate')]]></code>
-      <code><![CDATA[$xml->xpath('//md:AssertionConsumerService')]]></code>
-      <code><![CDATA[$xml->xpath('//md:SingleLogoutService')]]></code>
       <code><![CDATA[$xml->xpath('//md:SingleLogoutService')]]></code>
       <code><![CDATA[$xml->xpath('//md:SingleSignOnService')]]></code>
     </PossiblyNullIterator>
     <PossiblyNullPropertyFetch>
       <code><![CDATA[$xml->attributes()->entityID]]></code>
-      <code><![CDATA[$xml->attributes()->entityID]]></code>
     </PossiblyNullPropertyFetch>
     <PossiblyNullReference>
-      <code>__toString</code>
       <code>__toString</code>
       <code>__toString</code>
     </PossiblyNullReference>

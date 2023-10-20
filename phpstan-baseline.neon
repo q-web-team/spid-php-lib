@@ -327,7 +327,7 @@ parameters:
 
 		-
 			message: "#^Argument of an invalid type array\\<SimpleXMLElement\\>\\|false\\|null supplied for foreach, only iterables are supported\\.$#"
-			count: 5
+			count: 2
 			path: src/Spid/Saml/Idp.php
 
 		-
@@ -337,32 +337,32 @@ parameters:
 
 		-
 			message: "#^Cannot access property \\$Binding on SimpleXMLElement\\|null\\.$#"
-			count: 4
+			count: 2
 			path: src/Spid/Saml/Idp.php
 
 		-
 			message: "#^Cannot access property \\$Location on SimpleXMLElement\\|null\\.$#"
-			count: 4
+			count: 2
 			path: src/Spid/Saml/Idp.php
 
 		-
 			message: "#^Cannot access property \\$entityID on SimpleXMLElement\\|null\\.$#"
-			count: 2
+			count: 1
 			path: src/Spid/Saml/Idp.php
 
 		-
 			message: "#^Cannot call method attributes\\(\\) on SimpleXMLElement\\|false\\.$#"
-			count: 2
+			count: 1
 			path: src/Spid/Saml/Idp.php
 
 		-
 			message: "#^Cannot call method registerXPathNamespace\\(\\) on SimpleXMLElement\\|false\\.$#"
-			count: 4
+			count: 2
 			path: src/Spid/Saml/Idp.php
 
 		-
 			message: "#^Cannot call method xpath\\(\\) on SimpleXMLElement\\|false\\.$#"
-			count: 6
+			count: 3
 			path: src/Spid/Saml/Idp.php
 
 		-
@@ -457,16 +457,6 @@ parameters:
 
 		-
 			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXml\\(\\) has parameter \\$xmlFile with no type specified\\.$#"
-			count: 1
-			path: src/Spid/Saml/Idp.php
-
-		-
-			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXmlCIE\\(\\) has no return type specified\\.$#"
-			count: 1
-			path: src/Spid/Saml/Idp.php
-
-		-
-			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Idp\\:\\:loadFromXmlCIE\\(\\) has parameter \\$xmlFile with no type specified\\.$#"
 			count: 1
 			path: src/Spid/Saml/Idp.php
 
@@ -821,6 +811,11 @@ parameters:
 			path: src/Spid/Saml/Out/LogoutResponse.php
 
 		-
+			message: "#^Anonymous function has an unused use \\$host\\.$#"
+			count: 1
+			path: src/Spid/Saml/Settings.php
+
+		-
 			message: "#^Argument of an invalid type array\\<int, string\\>\\|false supplied for foreach, only iterables are supported\\.$#"
 			count: 1
 			path: src/Spid/Saml/Settings.php
@@ -853,11 +848,6 @@ parameters:
 		-
 			message: "#^Method Italia\\\\Spid\\\\Spid\\\\Saml\\\\Settings\\:\\:validateSettings\\(\\) has no return type specified\\.$#"
 			count: 1
-			path: src/Spid/Saml/Settings.php
-
-		-
-			message: "#^Parameter \\#2 \\$needle of function strpos expects string, string\\|false\\|null given\\.$#"
-			count: 2
 			path: src/Spid/Saml/Settings.php
 
 		-

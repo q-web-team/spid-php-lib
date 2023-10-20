@@ -37,11 +37,7 @@ class Saml implements SAMLInterface
             return $this->idps[$filename];
         }
         $idp = new Idp($this);
-        if ($filename != "cie") {
-            $this->idps[$filename] = $idp->loadFromXml($filename);
-        } else {
-            $this->idps[$filename] = $idp->loadFromXmlCIE($filename);
-        }
+        $this->idps[$filename] = $idp->loadFromXml($filename);
 
         return $idp;
     }
