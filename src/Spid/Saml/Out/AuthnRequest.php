@@ -59,7 +59,7 @@ XML;
 
         $assertID = $this->idp->assertID;
         $attrID = $this->idp->attrID;
-        $entityID = $this->idp->attrID;
+        $entityId = $this->idp->sp->settings['sp_entityid'];
 
         $level = 3;
         $force = $level > 1 ? "true" : "false";
@@ -80,8 +80,8 @@ AttributeConsumingServiceIndex="$assertID"
     <saml2:Issuer
        
 	    Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
-        NameQualifier="$entityID"
-        >https://login.comune.colceresa.vi.it/spid</saml2:Issuer>
+        NameQualifier="$entityId"
+        >$entityId</saml2:Issuer>
     <saml2p:NameIDPolicy Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient" />
     <saml2p:RequestedAuthnContext Comparison="minimum">
         <saml2:AuthnContextClassRef>https://www.spid.gov.it/SpidL$level</saml2:AuthnContextClassRef>
