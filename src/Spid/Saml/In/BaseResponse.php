@@ -94,7 +94,7 @@ class BaseResponse
             throw new \Exception("Invalid Response. Response must contain at least one signature");
         }
 
-        $responseSignature = null;
+        $responseSignature  = null;
         $assertionSignature = null;
         if ($signatures->length > 0) {
             foreach ($signatures as $key => $item) {
