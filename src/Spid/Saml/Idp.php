@@ -118,14 +118,15 @@ class Idp implements IdpInterface
         $this->level = $level;
 
         $authn = new AuthnRequest($this);
+        $redirectPost = $authn->redirectUrl($redirectTo);
 
-        //var_dump($authn);
-        //die;
-
-        $url = $binding == Settings::BINDING_REDIRECT ? $authn->redirectUrl($redirectTo) : $authn->httpPost($redirectTo);
-
-        var_dump($url);
-        die;
+        $_SESSION['RequestID'] = $authn->id;
+        $_SESSION['idpName'] = $this->idpFileName;
+        $_SESSION['idpEntityId'] = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
+        $_SESSION['acsUrl'] = $this->sp->settings['sp_assertionconsumerservice'][$ass];
+        
+        echo $redirectPost;
+        exit;
 
         //$_SESSION['RequestID'] = $authn->id;
         //$_SESSION['idpName'] = "https://idserver.servizicie.interno.gov.it/idp/profile/SAML2/POST/SSO";
