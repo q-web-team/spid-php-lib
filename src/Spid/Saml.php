@@ -159,6 +159,7 @@ XML;
         <md:Extensions>
             <spid:VATNumber>$pIVA_SP</spid:VATNumber>
             <spid:FiscalCode>$CF_SP</spid:FiscalCode>
+            <spid:IPACode>$ipaCode</spid:IPACode>
             <spid:Public/>
         </md:Extensions>
         <md:EmailAddress>$ref</md:EmailAddress>
